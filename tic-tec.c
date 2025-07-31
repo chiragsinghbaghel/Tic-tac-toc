@@ -157,14 +157,22 @@ void computer_move(char board [BOARD_SIZE][BOARD_SIZE]){
       {0,0},
       {0,2},
       {2,0},
-      {2,2},
+      {2,2}
     };
-    for(int i = 0; i < 4; i++){
-      if(board[corner[i][0]][corner[i][1]] == ' '){
-        board[corner[i][0]][corner[i][1]] == O;
-        return;
-      }
+    if(board[0][0] == ' '){
+      board [0][0] = O;
+      return;
+    }else if(board[0][2] == ' '){
+      board [0][2] = O;
+      return; 
+    }else if(board[2][0] == ' '){
+      board [2][0] = O;
+      return;
+    }else if(board[2][2] == ' '){
+      board[2][2] = 0;
+      return;
     }
+    
    }
    // 5. Play First avaiable move
    for(int i = 0; i < BOARD_SIZE; i++){
